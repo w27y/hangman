@@ -1,18 +1,12 @@
-h1 {color: red;
-    text-align: center;
-}
-
-h2 {text-align: center;}
-
 body {background-color: black;
     color: white;
 }
 
-button {font-size: large;}
+h1 {color: red;
+    text-align: center;
+}
 
-form {text-align: center;} 
-
-input {font-size: larger; text-align: center;}
+h2, form, input, button {text-align: center; font-size: x-large;}
 
 table, th, td {
     border: 5px solid white;
