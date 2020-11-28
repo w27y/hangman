@@ -1,5 +1,6 @@
 //Game Words Array
 const gameWordList = ["ROUDHOUSE", "FALCOR", "SAMSONITE", "KILOMETORY"];
+let failureArray = [];
 
 //Random Select a Word
 const gameWord = Math.floor(Math.random() * gameWordList.length);
@@ -31,13 +32,25 @@ function wordCheck(letterResult) {
   console.log("validate log:  " + validateLetter);
   if (validateLetter === true) {
     console.log("Letter Matched");
+    letterSuccess(letterResult);
 }
   else {
     console.log("Letter didn't match");
+    letterFail(letterResult);
   }
 }
 
-//Print letter if matched, draw body part if no match
+//Print letter if matched
+function letterSuccess(letterResult) {
+  
+}
+
+//draw body part if no match
+function letterFail(letterResult) {
+  let failLetters = document.getElementById('lettersTried');
+  failureArray.push(letterResult);
+  failLetters.textContent = failureArray;
+}
 
 //If word is completed, move to next word and increase score
 
