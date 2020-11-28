@@ -6,10 +6,11 @@
 //Random Select a Word
     const gameWord = Math.floor(Math.random() * gameWordList.length);
     let selectedWord = gameWordList[gameWord];
-    console.log("The word is:  " + selectedWord);
+    let selectedWordArray = Array.from(selectedWord);
+    console.log("array is:  " + selectedWordArray);
 
 //Create cell placeholders for each letter of the selected word
-    let selectedWordLength = selectedWord.length;
+    let selectedWordLength = selectedWordArray.length;
     console.log("Word length is:  " + selectedWordLength);
     let htmlWord = document.getElementById('word');
     let placeHolder = "_ ";
@@ -42,12 +43,29 @@
       }
     }
 
-    //Print letter if matched
+//Print letter if matched
     function letterSuccess(letterResult) {
-      let listLocation = gameWord.length(letterResult);
-      console.log(listLocation);
+      function getAllIndexes(arr, val) {
+        let indexes = [], i = -1;
+        while ((i = arr.indexOf(val, i+1)) != -1){
+          indexes.push(i);
+        }
+        return indexes;
+      }
+      let indexes = getAllIndexes(selectedWord, letterResult);
+      console.log(indexes);
+      listArray.push[0] = letterResult;
+      console.log(listArray);
       
+      
+
+
     }
+
+
+
+
+
 
 //draw body part if no match
     function letterFail(letterResult) {
