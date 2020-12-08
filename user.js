@@ -1,3 +1,9 @@
+/* 
+Author:  Mike Shehata
+Date:  12/7/2020
+Version:  1.0
+*/
+
 //Game Words, placeholder list, # of tries, and tried letter list Array declarations
     const gameWordList = ["ROADHOUSE", "FALCOR", "SAMSONITE", "TOMATUM", "LUNCHABOX"];
     let listArray = [];
