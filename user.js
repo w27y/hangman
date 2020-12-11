@@ -5,10 +5,16 @@ Version:  1.0
 */
 
 //Game Words, placeholder list, # of tries, and tried letter list Array declarations
-    const gameWordList = ["ROADHOUSE", "FALCOR", "SAMSONITE", "TOMATUM", "LUNCHABOX"];
+    const gameWordList = ["ROADHOUSE", "FALCOR", "SAMSONITE", "SLUGWORTH"];
     let listArray = [];
     let failureArray = [];
-    let numberTries = 5; 
+    let numberTries = 5;
+    let img = document.createElement("img");
+    img.src = "/pic0.png";
+    let src = document.getElementById("pics");
+    src.appendChild(img);
+    let gameOver = false;
+    let status = document.getElementById("status");
 
 //Random Select a Word
     const gameWord = Math.floor(Math.random() * gameWordList.length);
@@ -49,7 +55,6 @@ Version:  1.0
 //Check if letter matches part of word
     function wordCheck(letterResult) {
       let validateLetter = selectedWord.includes(letterResult); 
-      console.log("validate log:  " + validateLetter);
       if (validateLetter === true) {
         console.log("Letter Matched");
         letterSuccess(letterResult);
@@ -119,7 +124,8 @@ Version:  1.0
       numberTries = numberTries - 1;
       tries.textContent = numberTries;
       endGame();
-    }
+      }
+    
 
 //If word is completed, alert user
     function checkWinner() {
@@ -128,13 +134,27 @@ Version:  1.0
       }
       else {
         console.log("Winner");
-        if(!alert('You Win!!!')){window.location.reload();}
+        status.textContent = "You Win!!!";
       }
     }
 
 //If word is not completed after 5 fails, game over
     function endGame() {
-      if (numberTries == 0) {
-        if(!alert('You Lose!!!' + " The word was: " + selectedWord)){window.location.reload();}
+      if (numberTries == 4) {
+        img.src = "/pic1.png";
       }
+      if (numberTries == 3) {
+        img.src = "/pic2.png";
+      }
+      if (numberTries == 2) {
+        img.src = "/pic3.png";
+      }
+      if (numberTries == 1) {
+        img.src = "/pic4.png";
+      }
+      if (numberTries == 0) {
+        console.log("Zero Tries Left");
+        img.src = "/pic5.png";
+        status.textContent = "You Lose!!! The word was:  " + selectedWord;
+    }
     }

@@ -2,25 +2,6 @@
 <html>
     <title>Mike's Hangman Game!</title>
     <body>
-        <style>
-            body {background-color: black;
-            color: white;
-        }
-
-        h1 {color: red;
-            text-align: center;
-        }
-
-        h2, form, input, button {text-align: center; font-size: x-large;}
-
-        table, th, td {
-            border: 5px solid white;
-            border-collapse: collapse;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-  }
-        </style>
         <link rel="stylesheet" href="style.css">
 
         <h1>Hangman!!!</h1>
@@ -28,19 +9,22 @@
         <table>
             <tr><td>
         </br>
+        <h1><a id="status"></a></h1>
         <h2><a id="htmlWord" title="htmlWord"></a></h2>
         </br>
         <form class="form" id="form">
         <input type="text" name="letter" id="letter" size="1" maxlength="1" required autofocus></br></br>
-        <input type="submit" value="Submit" id="submit">
+        <input type="submit" value="Submit" id="submit"> &nbsp;&nbsp; <button onClick="window.location.reload();">Next Word</button>
         <h2 id="log">Enter a Letter!</h2>
         </form>
         </td></tr></table></br></br>
 
         <table>
             <tr><td>
+        <h1>Suicide Gallery</h1>
         <h2>Tries Remaining:  <a id="tries"></a></h2>
         <h3>Letters Tried:  <a id="lettersTried"></a></h3>
+        <div id="pics" class="pics"></div>
 </br>
 </br>
         </td></tr></table>
