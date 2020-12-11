@@ -10,7 +10,7 @@ Version:  1.0
     let failureArray = [];
     let numberTries = 5;
     let img = document.createElement("img");
-    img.src = "/pic0.png";
+    img.src = "./pic0.png";
     let src = document.getElementById("pics");
     src.appendChild(img);
     let gameOver = false;
@@ -141,20 +141,20 @@ Version:  1.0
 //If word is not completed after 5 fails, game over
     function endGame() {
       if (numberTries == 4) {
-        img.src = "/pic1.png";
+        img.src = "./pic1.png";
       }
       if (numberTries == 3) {
-        img.src = "/pic2.png";
+        img.src = "./pic2.png";
       }
       if (numberTries == 2) {
-        img.src = "/pic3.png";
+        img.src = "./pic3.png";
       }
       if (numberTries == 1) {
-        img.src = "/pic4.png";
+        img.src = "./pic4.png";
       }
       if (numberTries == 0) {
         console.log("Zero Tries Left");
-        img.src = "/pic5.png";
+        img.src = "./pic5.png";
         status.textContent = "You Lose!!! The word was:  " + selectedWord;
     }
     }
